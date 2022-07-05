@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - print putchar
- * return: always 0
- */
+* main - print putchar
+	* return: always 0
+*/
 int main(void)
 {
 	_putchar('_');
@@ -13,7 +13,7 @@ int main(void)
 	_putchar('c');
 	_putchar('h');
 	_putchar('a');
-	_puthcar('r');
+	_putchar('r');
 	_putchar('\n');
 
 	return (0);
