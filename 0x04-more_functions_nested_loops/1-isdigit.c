@@ -3,7 +3,7 @@
 /**
  * _isdigit - check the code
  *
- * Return: Always 0 or 1
+ * Return: 0 or 1
  */
 
 int _isdigit(int c)
