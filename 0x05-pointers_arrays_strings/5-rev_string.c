@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * rev_string - Entry point.
  * @s: Variable which holds the string.
