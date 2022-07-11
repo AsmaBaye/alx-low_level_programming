@@ -1,4 +1,4 @@
-include "main.h"
+include "holberton.h"
 /**
  * rev_string - Entry point.
  * @s: Variable which holds the string.
