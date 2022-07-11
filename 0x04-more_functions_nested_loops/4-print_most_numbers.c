@@ -1,19 +1,21 @@
 #include "main.h"
-/**
- * print_most_numbers -> assign a random number to the
- * Return: Always 0 (Success)
- */
+#include <stdio.h>
 
+/**
+ * print_most_numbers - prints numbers from 0 to 9, but 2 and 4
+ *
+ * Return: 0
+ */
 void print_most_numbers(void)
 {
-	int i;
+	int digit;
 
-	for (i = 0; i < 10; i++)
+	for (digit = 48; digit < 58; digit++)
 	{
-		if (i == 2 ¦¦ i == 4)
-			continue;
-		else
-			_putchar(i);
+		if ((digit != 50) && (digit != 52))
+		{
+			_putchar(digit);
+		}
 	}
-	_putchar("/n");
+	_putchar('\n');
 }
