@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * *cap_string - capitalizes letters of a string.
  *
@@ -42,3 +43,4 @@ char *cap_string(char *ptr)
 
 	return (ptr);
 }
+
