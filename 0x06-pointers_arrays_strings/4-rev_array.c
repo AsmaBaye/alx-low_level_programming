@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _strcat - function that print a string overwriting a string
- * @src: int
- * @dest: int
+ * reverse_array - function that print a string overwriting a string
+ * @a: int
+ * @n: int
  *
  */
 void reverse_array(int *a, int n)
