@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
-/**touch 
+
+/**
  * _strncpy - function that copy a string
  * @src: char
  * @dest: char
