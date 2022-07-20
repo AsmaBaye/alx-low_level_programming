@@ -1,16 +1,20 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	int n;
+ * _strlen_recursion - returns the length of a string.
+ * @s: char
+ * Return: count;
+*/
 
-	n = _strlen_recursion("Corbin Coleman");
-	printf("%d\n", n);
-	return (0);
+int _strlen_recursion(char *s)
+{
+	int count = 0;
+
+	if (*s != '\0')
+	{
+		count = _strlen_recursion(s + 1);
+		count++;
+	}
+
+	return (count);
 }
