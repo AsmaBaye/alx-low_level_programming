@@ -1,53 +1,49 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * op_add - suma
- * @a: int
- * @b: int
+ * op_add - returns the sum of a and b.
  *
- * Description: suma
- * Return: 0
+ * @a: first val.
+ * @b: second val.
+ *
+ * Return: sum of a and b.
  */
 int op_add(int a, int b)
 {
 	return (a + b);
 }
-
 /**
- * op_sub - resta
- * @a: int
- * @b: int
+ * op_sub - returns the difference of a and b.
  *
- * Description: resta
- * Return: 0
+ * @a: first val.
+ * @b: second val.
+ *
+ * Return: dif of a and b.
  */
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
-
 /**
- * op_mul -multi
- * @a: int
- * @b: int
+ * op_mul - returns the product of a and b.
  *
- * Description: mutil
- * Return: 0
+ * @a: first val.
+ * @b: second val.
+ *
+ * Return: product of a and b.
  */
-
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
-
 /**
- * op_div - div
- * @a: int
- * @b: int
+ * op_div - returns the result of the division of a and b.
  *
- * Description: div
- * Return: 0
+ * @a: first val.
+ * @b: second val.
+ *
+ * Return: result of a and b.
  */
 int op_div(int a, int b)
 {
@@ -58,14 +54,13 @@ int op_div(int a, int b)
 	}
 	return (a / b);
 }
-
 /**
- * op_mod - mod
- * @a: int
- * @b: int
+ * op_mod - returns the modulus of a and b.
  *
- * Description: mod
- * Return: 0
+ * @a: first val.
+ * @b: second val.
+ *
+ * Return: mod of a and b.
  */
 int op_mod(int a, int b)
 {
