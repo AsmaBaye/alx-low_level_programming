@@ -1,41 +1,80 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * free_listint_safe - frees a list (safe version)
- * @h: linked list of type listint_t
+ * add_nodeaddr_2 - adds an element to a list
+ * @head: pointer to the head of a list
+ * @addr: data to be added
  *
- * Return: number of nodes in freed list
+ * Return: a pointer to the list or NULL
  */
+list_addr *add_nodeaddr_2(list_addr **head, const size_t addr)
+{
+	list_addr *node, *temp = *head;
 
+	while (temp != NULL)
+	{
+		if (temp->addr == addr)
+			return (NULL);
+		temp = temp->next;
+	}
+
+	node = malloc(sizeof(list_addr));
+	if (node == NULL)
+		exit(98);
+
+	node->addr = addr;
+
+	if (head == NULL)
+	{
+		node->next = NULL;
+		return (node);
+	}
+
+	node->next = *head;
+	*head = node;
+	return (node);
+}
+
+/**
+ * free_listaddr_2 - frees the memory allocated for list
+ * @head: pointer to the head of the list
+ *
+ * Return: Nothing
+ */
+void free_listaddr_2(list_addr *head)
+{
+	if (head != NULL)
+	{
+		if (head->next != NULL)
+			free_listaddr_2(head->next);
+
+		free(head);
+	}
+}
+
+/**
+ * free_listint_safe - safely frees memory allocated to a list
+ * @h: pointer to the list
+ *
+ * Return: the number of nodes
+ */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current, *runner, *head;
-	size_t h_i, r_i;
+	size_t count = 0;
+	listint_t *temp = *h, *next;
+	list_addr *freed = NULL;
 
-	if (h == NULL || *h == NULL)
-		return (0);
-
-	current = *h;
-	head = *h;
-	h_i = 0;
-
-	while (head != NULL)
+	while (temp != NULL)
 	{
-		runner = *h;
-		for (r_i = 0; r_i < h_i; r_i++)
-		{
-			if (runner == current)
-			{
-				*h = NULL;
-				return (h_i);
-			}
-			runner = runner->next;
-		}
-		current = head->next;
-		free(head);
-		head = current;
-		h_i++;
+		if (add_nodeaddr_2(&freed, (size_t)temp) == NULL)
+			break;
+		next = temp->next;
+		free(temp);
+		temp = next;
+		count++;
 	}
+	free_listaddr_2(freed);
 	*h = NULL;
-	return (h_i);
+	return (count);
 }
